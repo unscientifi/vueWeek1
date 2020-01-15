@@ -6,7 +6,11 @@ var vm = new Vue({
   data: {
 
     // mock up the user - this well eventually come from the database UMS (user management system)
-
+    user: {
+      isAdmin: false,
+      avatar: null,
+      isLoggedIn: true
+    },
 
     // this data would also come from the database, but we'll just mock it up for now
     videodata: [
@@ -19,6 +23,19 @@ var vm = new Vue({
   },
 
   methods: {
+    setUserPrefs() {
+      // this is the preference control, hit the api when ready
+      console.log('set user prefs here');
+    },
 
+    userLogin() {
+      // call the login route, and / or load the login component
+      console.log('do login / logout on click');
+
+
+      //this is a ternary statement -> shorthand for if / else
+      //the expression evaluates to true or false - if it's true, set the value equals to
+      this.user.isLoggedIn = (this.user.isLoggedIn) ? false : true;
+    }
   }
 });
